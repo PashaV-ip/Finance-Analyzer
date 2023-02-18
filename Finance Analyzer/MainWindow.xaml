@@ -1,0 +1,64 @@
+﻿<Window x:Class="Finance_Analyzer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Finance_Analyzer"
+        mc:Ignorable="d"
+        Title="Анализатор финансов" Height="500" Width="800" ResizeMode="NoResize" Background="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Анализатор финансов" FontSize="30" VerticalAlignment="Center" TextAlignment="Center"/>
+        <Grid Name="Test" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90"/>
+                <RowDefinition/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            
+            <!--Панель добавления доходов-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Введите доходы" FontSize="20" TextAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox Name="Income_TextBox" FontSize="20" VerticalAlignment="Center" Margin="15, 0"/>
+                <Button Name="AddIncome_Button" Grid.Column="1" Content="Добавить" FontSize="20" Click="Buttons_Click" VerticalAlignment="Center" Margin="0, 0, 15, 0"/>
+                <DatePicker Name="DateIncome_DatePicker" VerticalAlignment="Bottom" Margin="15, 0"/>
+            </Grid>
+            <ListView Name="AllIncomes_ListView" Grid.Row="1" FontSize="20" Margin="15, 15, 15, 30"/>
+            <Button Name="DeleteIncome_Button" Click="Buttons_Click" Grid.Row="1" Content="❌" Foreground="White" Background="Gray" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="15, 0"/>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="Введите расходы" FontSize="20" TextAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox Name="Expenses_TextBox" Grid.Column="1" FontSize="20" VerticalAlignment="Center" Margin="15, 0"/>
+                <Button Name="AddExpenses_Button" Content="Добавить" FontSize="20" Click="Buttons_Click" VerticalAlignment="Center" Margin="15, 0, 0, 0"/>
+                <DatePicker Grid.Column="1" Name="DateExpens_DatePicker" VerticalAlignment="Bottom" Margin="15, 0"/>
+            </Grid>
+            <ListView Name="AllExpenses_ListView" Grid.Row="1" Grid.Column="1" FontSize="20" Margin="15, 15, 15, 30"/>
+            <Button Name="DeleteExpens_Button" Click="Buttons_Click" Grid.Row="1" Grid.Column="1" Content="❌" Foreground="White" Background="Gray" Height="30" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15, 0"/>
+
+
+            <Button Name="Analyse_Button" Grid.Row="2" Grid.ColumnSpan="2" 
+                    Content="Проанализировать" FontSize="20"
+                    Click="Buttons_Click"
+                    HorizontalAlignment="Center" Margin="0, 15" Padding="40, 0, 40, 0"/>
+            <Button Name="Exit_Button" Grid.Row="2" Grid.Column="1"
+                    Content="Выход" FontSize="20" 
+                    Click="Buttons_Click"
+                    HorizontalAlignment="Right" Margin="15, 15" Padding="40, 0, 40, 0"/>
+        </Grid>
+    </Grid>
+</Window>
